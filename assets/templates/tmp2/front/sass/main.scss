@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i|Poppins:400,400i,500,600,700,700i&display=swap');
+/*
+Template Name: BixZen - Business Website HTML Template
+Template URI: http: //idealbrothers.thesoftking.com/html/bixzen/
+Author: idealbrothers
+Author URI: https: //themeforest.net/user/idealbrothers
+Description: BixZen - Business Website HTML Template. BixZen is a Pixel-Perfect Powerful,
+Mordern Business Website HTML Template for all types of Business.
+Version: 1.0.0
+Text Domain: 
+*/
+/*
+///// CSS Index \\
+01. Reset CSS Start
+---------------------------
+02. General CSS
+---------------------------
+03. Service-Section CSS 
+    ----Service-Two CSS
+    ----Service-Details CSS
+---------------------------
+04. Team-Section CSS 
+    ----Team-Section-Two CSS
+    ----Team-Details CSS
+---------------------------
+05. Counter-Section CSS
+---------------------------
+06. Ticket-Section CSS
+    ----Ticket-Section-Two CSS
+    ----Ticket-Section-Three CSS
+---------------------------
+07. Client-Section CSS
+    ----Client-Section-Slider
+---------------------------
+08. Consulting-Section CSS
+---------------------------
+09. Blog-Section CSS
+    ----Sidebar CSS
+---------------------------
+10. Footer-Section CSS
+---------------------------
+11. About-Section CSS
+---------------------------
+12. Choose-Section CSS
+---------------------------
+13. Sponsor-Section CSS
+---------------------------
+14. Project-Section CSS
+    ----Project-Details CSS
+---------------------------
+15. Video-Section CSS
+---------------------------
+16. Page-Header CSS
+---------------------------
+17. Privacy-Section CSS
+---------------------------
+18. Gallery-Section CSS
+---------------------------
+19. Faq-Section CSS
+    ----Faq-Section-Two CSS
+    ----Faq-Contact-Form CSS
+---------------------------
+20. Four-Not-Four-Section CSS
+---------------------------
+*/
+@import '_abstracts/_mixins';
+@import '_abstracts/_variables';
+@import '_base/_reset';
+@import '_base/_global';
+@import '_base/_typography';
+@import '_base/_about';
+@import '_layout/_footer';
+@import '_layout/_forms';
+@import '_layout/_header';
+@import '_layout/_banner';
+@import '_layout/_navigation';
+@import '_layout/_sidebar';
+@import '_layout/_section';
+@import '_layout/_blog';
+@import '_components/_buttons';

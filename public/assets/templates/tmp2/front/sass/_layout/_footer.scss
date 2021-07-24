@@ -1,0 +1,133 @@
+/*Footer-Section Starts Here*/
+.footer-top {
+    border-bottom: 1px solid #271c3e;
+}
+.footer-widget {
+    .widget-header {
+        position: relative;
+        .title {
+            margin-bottom: 27px;
+            text-transform: capitalize;
+            margin-top: 0;
+            @include breakpoint(sm) {
+                margin-top: -5px;
+            }
+            @include breakpoint(lg) {
+                margin-bottom: 47px;
+            }
+        }
+        &::after {
+            @extend %pa;
+            width: 45px;
+            height: 1px;
+            background: $theme-four;
+            bottom: -18px;
+            left: 0;
+        }
+    }
+    &.widget-about {
+        .logo {
+            margin-bottom: 50px;
+        }
+        .content {
+            opacity: .9;
+            p {
+                margin-bottom: 11px;
+            }
+            .addr {
+                margin-bottom: -13px;
+                >li {
+                    @extend %flex;
+                    margin-bottom: 5px;
+                    .icon {
+                        width: 40px;
+                        font-size: 24px;
+                        margin-top: 4px;
+                        i {
+                            color: $theme-four;
+                        }
+                    }
+                    ul {
+                        width: calc(100% - 40px);
+                        li {
+                            padding: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.widget-links {
+        ul {
+            margin-bottom: -13px;
+            li {
+                @extend %flex;
+                &::before {
+                    content: "\f111";
+                    font-family: "Font Awesome 5 Free";
+                    font-weight: 600;
+                    color: $theme-four;
+                    left: 0;
+                    font-size: 8px;
+                    align-items: flex-start;
+                    width: 18px;
+                }
+                a {
+                    opacity: .9;
+                    width: calc(100% - 18px);
+                }
+                &:hover {
+                    a {
+                        opacity: 1;
+                        padding-left: 3px;
+                    }
+                }
+            }
+        }
+    }
+    &.widget-post {
+        ul {
+            margin-bottom: -13px;
+            li {
+                margin-bottom: 5px;
+                .sub-title {
+                    margin-top: 4px;
+                    font-size: 16px;
+                    font-weight: 400;
+                    font-family: $body;
+                    margin-bottom: 10px;
+                    a {
+                        color: $white-color;
+                        text-transform: none;
+                    }
+                }
+                a {
+                    color: $theme-four;
+                    text-transform: uppercase;
+                }
+            }
+            @include breakpoint(lg) {
+                li {
+                    margin-bottom: 15px;
+                }
+            }
+        }
+    }
+    margin-bottom: 50px;
+}
+.mb-50-none {
+    margin-bottom: -50px;
+}
+.footer-bottom {
+    padding: 27px 0;
+}
+footer {
+    overflow: hidden;
+    position: relative;
+}
+.footer-bottom {
+    * {
+        position: relative;
+        z-index: 9;
+    }
+}

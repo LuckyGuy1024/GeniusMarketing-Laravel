@@ -1,0 +1,338 @@
+%pr {
+    position: relative;
+}
+%pa {
+    position: absolute;
+    content : '';
+}
+%flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+%center {
+    top: 50%;
+    left: 50%;
+    @include transform(translate(-50% , -50%));
+    position: absolute;
+    content: "";
+}
+//Padding Top and Bottom
+.padding-top {
+    padding-top: 80px;
+}
+.padding-bottom {
+    padding-bottom: 80px;
+}
+@include breakpoint(lg) {
+    .padding-top {
+        padding-top: 120px;
+    }
+    .padding-bottom {
+        padding-bottom: 120px;
+    }
+}
+//Preloader
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    width: 100%;
+    height: 100%;
+    background-color: #081636;
+    overflow: hidden;
+}
+.preloader-inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+.preloader-icon {
+    width: 72px;
+    height: 72px;
+    display: inline-block;
+    padding: 0px;
+}
+.preloader-icon span {
+    position: absolute;
+    display: inline-block;
+    width: 72px;
+    height: 72px;
+    border-radius: 100%;
+    background: $theme-color;
+    -webkit-animation: preloader-fx 1.6s linear infinite;
+    animation: preloader-fx 1.6s linear infinite;
+}
+.preloader-icon span:last-child {
+    animation-delay: -0.8s;
+    -webkit-animation-delay: -0.8s;
+}
+@keyframes preloader-fx {
+    0% {
+        -webkit-transform: scale(0, 0);
+        transform: scale(0, 0);
+        opacity: 0.5;
+    }
+    100% {
+        -webkit-transform: scale(1, 1);
+        transform: scale(1, 1);
+        opacity: 0;
+    }
+}
+@-webkit-keyframes preloader-fx {
+    0% {
+        -webkit-transform: scale(0, 0);
+        opacity: 0.5;
+    }
+    100% {
+        -webkit-transform: scale(1, 1);
+        opacity: 0;
+    }
+}
+/*Section Header*/
+
+.mb-30-none {
+    margin-bottom: -30px !important;
+}
+.tab-item {
+    display: none;
+    &:first-child {
+        display: block;
+    }
+}
+.tab-menu {
+    li {
+        cursor: pointer;
+    }
+}
+.bg-ash {
+    background-color: #f5f8ff;
+}
+.bg-f8 {
+    background-color: #f8f8f8;
+}
+*::-webkit-scrollbar-track {
+    background-color: #000;
+}
+
+*::-webkit-scrollbar {
+    width: 6px;
+    background-color: #000;
+}
+
+*::-webkit-scrollbar-thumb {
+    background: $white-color;
+}
+.bg-theme-hover:hover,
+.bg-theme {
+    background: $theme-color;
+    .title,
+    p,
+    i {
+        color: $white-color !important;
+    }
+    .section-header.style-two .right-side::after,
+    .section-header .right-side::after {
+        background: $white-color;
+    }
+}
+.dark-bg {
+    background-color: $dark-color;
+    * {
+        color: $white-color;
+    }
+}
+.mt-10 {
+    margin-top: 10px;
+}
+.mt-20 {
+    margin-top: 20px;
+}
+.mt-50 {
+    margin-top: 50px;
+}
+.mb-10 {
+    margin-bottom: 10px;
+}
+.mb-20 {
+    margin-bottom: 20px;
+}
+.mb-50 {
+    margin-bottom: 50px;
+}
+.pt-10 {
+    padding-top: 10px;
+}
+.pt-20 {
+    padding-top: 20px;
+}
+.pt-50 {
+    padding-top: 50px;
+}
+.pb-10 {
+    padding-bottom: 10px;
+}
+.pb-20 {
+    padding-bottom: 20px;
+}
+.pb-50 {
+    padding-bottom: 50px;
+}
+.c-thumb {
+    overflow: hidden;
+    a {
+        display: block;
+    }
+    img {
+        width: 100%;
+        @include transition($transition);
+    }
+}
+.light-color {
+    * {
+        color: $white-color;
+    }
+}
+.section-header {
+    text-align: center;
+    max-width: 725px;
+    margin: 0 auto 42px;
+    .title {
+        text-transform: capitalize;
+        margin-bottom: 21px;
+    }
+    .right-side {
+        position: relative;
+        padding-top: 32px;
+        &::after {
+            width: 70px;
+            height: 2px;
+            position: absolute;
+            content: "";
+            background: $theme-color;
+            top: 0;
+            left: 50%;
+            @include transform(translateX(-50%));
+        }
+    }
+    p {
+        margin-bottom: 27px;
+        @include breakpoint(sm) {
+            margin-bottom: 32px;
+        }
+    }
+    @include breakpoint(sm) {
+        margin-bottom: 52px;
+        .title {
+            margin-bottom: 15px;
+        }
+        .right-side {
+            padding-top: 52px;
+        }
+    }
+    @include breakpoint(lg) {
+        margin-bottom: 62px;
+    }
+    &.style-two {
+        @include breakpoint(lg) {
+            display: flex;
+            flex-wrap: wrap;
+            text-align: left;
+            max-width: 100%;
+            .left-side {
+                width: 400px;
+                padding-right: 20px;
+            }
+            .right-side {
+                width: calc(100% - 400px);
+                padding: 0;
+                padding-left: 30px;
+                &::after {
+                    top: 0;
+                    left: 0;
+                    width: 4px;
+                    height: 100%;
+                    @include transform(translate(0));
+                    background: $theme-two;
+                }
+                p {
+                    max-width: 600px;
+                }
+            }
+            .title {
+                margin-top: -13px;
+                margin-bottom: -15px;
+            }
+            p {
+                margin-top: -8px;
+            }
+        }
+    }
+    &.left-style {
+        max-width : 560px;
+        text-align: left;
+        margin-left: 0;
+        .title {
+            margin-top: -13px;
+        }
+        .right-side {
+            &::after {
+                left: 0;
+                @include transform(translate(0));
+            }
+        }
+    }
+    &.mw-100 {
+        max-width: 100%;
+    }
+    &.mw-620 {
+        max-width: 620px;
+    }
+}
+.mw-lg-100 {
+    @include breakpoint(lg) {
+        min-width: 100%;
+    }
+}
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(0 ,0 ,0, .7);
+    z-index: 99;
+    display: none;
+    &.active {
+        display: block;
+        animation-name: fadeIn;
+        -webkit-animation-name: fadeIn;
+        -moz-animation-name: fadeIn;
+        animation-duration: .3s;
+        -webkit-animation-duration: .3s;
+        -moz-animation-duration: .3s;
+    }
+}
+.parallax-container {
+    position: relative;
+    overflow: hidden;
+    * {
+        z-index: 9;
+        position: relative;
+    }
+}
+.parallax-window {
+    width: 100%;
+    height: 100%;
+    position: absolute !important;
+    top: 0;
+    left: 0;
+}
+.bg-theme-two {
+    background: $theme-two;
+    * {
+        color: $white-color;
+    }
+}

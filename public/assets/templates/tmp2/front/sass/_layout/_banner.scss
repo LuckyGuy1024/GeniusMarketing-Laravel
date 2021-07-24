@@ -1,0 +1,221 @@
+.banner-content {
+    position: relative;
+    z-index: 9;
+    text-align: center;
+    * {
+        position: relative;
+        z-index: 9;
+    }
+    .banner-cate {
+        font-size: 18px;
+        font-weight: 500;
+        font-family: $heading;
+        text-transform: uppercase;
+        margin-bottom: 5px;
+        display: block;
+        margin-top: -7px;
+    }
+    .title {
+        font-size: 42px;
+        text-transform: capitalize;
+        margin-bottom: 19px;
+    }
+    p {
+        margin-bottom: 21px;
+        font-family: $heading;
+    }
+    .banner-button {
+        margin: -5px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        a {
+            margin: 5px;
+        }
+    }
+    @include breakpoint(sm) {
+        text-align: left;
+        .banner-cate {
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+        .title {
+            font-size: 48px;
+            margin-bottom: 22px;
+        }
+        p {
+            font-size: 18px;
+            margin-bottom: 27px;
+        }
+        .banner-button {
+            margin: -15px;
+            justify-content: flex-start;
+            a {
+                margin: 15px;
+            }
+        }
+    }
+    @include breakpoint(md) {
+        max-width: 640px;
+        .banner-cate {
+            font-size: 26px;
+        }
+        .title {
+            font-size: 74px;
+            margin-bottom: 24px;
+        }
+        p {
+            max-width: 550px;
+            margin-bottom: 37px;
+        }
+    }
+    @include breakpoint(lg) {
+        .banner-cate {
+            margin-bottom: 13px;
+        }
+        .title {
+            margin-bottom: 29px;
+        }
+        p {
+            margin-bottom: 42px;
+        }
+    }
+    @media screen and (max-width: 399px) {
+        .title {
+            font-size: 32px;
+            margin-bottom: 22px;
+        }
+        .banner-cate {
+            margin-bottom: 10px;
+        }
+    }
+}
+.banner-section {
+    position: relative;
+    padding: 167px 0 100px;
+    @include breakpoint(sm) {
+        padding: 207px 0 140px;
+    }
+    @include breakpoint(md) {
+        padding: 240px 0 170px;
+    }
+    @include breakpoint(lg) {
+        padding: 290px 0 200px;
+    }
+    @include breakpoint(lg) {
+        padding: 335px 0 245px;
+    }
+    &.style-two {
+        position: relative;
+        &::before {
+            position: absolute;
+            content: "";
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            background: rgba(255, 255, 255, .6);
+        }
+        p , .banner-cate, .custom-button.transparent {
+            color: $title-color;
+        }
+        .custom-button.transparent:hover {
+            color: $white-color;
+        }
+        padding: 100px 0;
+        @include breakpoint(sm) {
+            padding: 140px 0;
+        }
+        @include breakpoint(md) {
+            padding: 170px 0;
+        }
+        @include breakpoint(lg) {
+            padding: 200px 0;
+        }
+        @include breakpoint(lg) {
+            padding: 245px 0;
+        }
+    }
+}
+.banner-shape {
+    position: absolute !important;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-position: top left;
+    mask-position: top left;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    top: 0;
+    left: 0;
+    &.shape01 {
+        width: 40%;
+        max-width: 648px;
+        height: 100%;
+        max-height: 348px;
+        -webkit-mask-image: url(./img/banner-shape01.png);
+        mask-image: url(./img/banner-shape01.png);
+        background: linear-gradient(-130deg, #ff007a 30%, #3b1d82 75%);
+        background: -webkit-linear-gradient(-130deg, #ff007a 30%, #3b1d82 75%);
+        background: -moz-linear-gradient(-130deg, #ff007a 30%, #3b1d82 75%);
+    }
+    &.shape02 {
+        width: 45%;
+        max-width: 451px;
+        height: 100%;
+        max-height: 517px;
+        -webkit-mask-image: url(./img/banner-shape02.png);
+        mask-image: url(./img/banner-shape02.png);
+        background-color: rgb(59, 29, 130);
+        opacity: .8;
+        box-shadow: 0px 6px 72.9px 8.1px rgba(0, 0, 0, .56);
+    }
+    &.shape03 {
+        width: 100%;
+        max-width: 772px;
+        height: 100%;
+        max-height: 857px;
+        opacity: .8;
+        -webkit-mask-image: url(./img/banner-shape03.png);
+        mask-image: url(./img/banner-shape03.png);
+        background-color: rgb(59, 29, 130);
+        box-shadow: 0px 6px 72.9px 8.1px rgba(0, 0, 0, .56);
+    }
+    &.shape04 {
+        width: 40%;
+        height: 40%;
+        max-width: 170px;
+        max-height: 275px;
+        bottom: 100px;
+        top: auto;
+        &::after {
+            @extend %pa;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            -webkit-mask-image: url(../../assets/images/banner/banner-round-shape.png);
+            mask-image: url(../../assets/images/banner/banner-round-shape.png);
+            background: $theme-two;
+            -webkit-mask-size: contain;
+            mask-size: contain;
+            -webkit-mask-position: top left;
+            mask-position: top left;
+            -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat;
+            animation: 15s shake linear infinite;
+            -webkit-animation: 15s shake linear infinite;
+            -moz-animation: 15s shake linear infinite;
+        }
+        &.right {
+            left: auto;
+            right: 0;
+            &::after {
+                -webkit-mask-image: url(../../assets/images/banner/banner-round-shape02.png);
+                mask-image: url(../../assets/images/banner/banner-round-shape02.png);
+            }
+        }
+    }
+}
+.banner-section.gradient-bg-two::after {
+    opacity: .85;
+}
